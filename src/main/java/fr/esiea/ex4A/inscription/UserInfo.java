@@ -2,6 +2,7 @@ package fr.esiea.ex4A.inscription;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 public class UserInfo {
 
     public final String email;
@@ -33,7 +34,7 @@ public class UserInfo {
             ", twitter='" + twitter + '\'' +
             ", pays='" + pays + '\'' +
             ", sexe='" + sexe + '\'' +
-            ", userSexPref='" + sexPref + '\'' +
+            ", sexPref='" + sexPref + '\'' +
             '}';
     }
 }
