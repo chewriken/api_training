@@ -2,7 +2,6 @@ package fr.esiea.ex4A.inscription;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 public class UserInfo {
 
     public final String email;
