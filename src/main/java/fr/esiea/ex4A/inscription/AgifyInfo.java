@@ -20,12 +20,11 @@ public class AgifyInfo {
 
     @Override
     public String toString() {
-        return "agifyInfo{" +
+        return "AgifyInfo{" +
             "name='" + name + '\'' +
             ", age=" + age +
             ", count=" + count +
             ", country='" + country + '\'' +
             '}';
     }
-
 }
