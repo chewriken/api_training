@@ -23,11 +23,13 @@ public class InscriptionController {
 
     @PostMapping("/api/inscription")
     public void inscription(@RequestBody UserInfo userInfo) throws IOException {
-        Response<AgifyInfo> response = agifyClient.defineAge(userInfo.name, userInfo.pays).execute();
-        AgifyInfo agifyInfo = response.body();
-        agifyMap.put(agifyInfo.name,agifyInfo);
-        userMap.put(userInfo.name,userInfo);
-        System.out.println(userMap);
+        if (!agifyMap.containsKey(userInfo.name)) {
+            Response<AgifyInfo> response = agifyClient.defineAge(userInfo.name, userInfo.pays).execute();
+            AgifyInfo agifyInfo = response.body();
+            agifyMap.put(agifyInfo.name, agifyInfo);
+            userMap.put(userInfo.name, userInfo);
+            System.out.println(agifyMap);
+        }
     }
 
     @GetMapping("/api/matches")
