@@ -13,6 +13,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
@@ -47,7 +48,7 @@ class InscriptionControllerIT {
 
         when(matches.getMatches(userMap,agifyMap,joakimUser.name)).thenReturn(listMatch);
         mockMvc
-            .perform(MockMvcRequestBuilders.get("/api/matches?userName=joakim&user_country"))
+            .perform(MockMvcRequestBuilders.get("/api/matches?userName=joakim&user_country=FR"))
             .andExpect(status().isOk());
         verify(matches).getMatches(userMap,agifyMap,joakimUser.name);
     }
